@@ -6,3 +6,6 @@ use Illuminate\Support\Facades\Route;
 
 // All Listings
 Route::get('/', [JobController::class, 'index']);
+
+// Single Listing
+Route::get('/jobs/{job}', [JobController::class, 'show']);

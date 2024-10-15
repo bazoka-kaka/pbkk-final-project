@@ -14,4 +14,11 @@ class JobController extends Controller
             'jobs' => Job::latest()->filter(request(['tag', 'search']))->paginate(6)
         ]);
     }
+
+    //Show single job
+    public function show(Job $job) {
+        return view('jobs.show', [
+            'job' => $job
+        ]);
+    }
 }
