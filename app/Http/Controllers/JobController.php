@@ -21,4 +21,32 @@ class JobController extends Controller
             'job' => $job
         ]);
     }
+
+    // Show Create Form
+    public function create() {
+        return view('jobs.create');
+    }
+
+    // Store Job Data
+    public function store(Request $request) {
+        $formFields = $request->validate([
+            'title' => 'required',
+            'email' => ['required', 'email'],
+            'duration' => 'required',
+            'tags' => 'required',
+            'description' => 'required'
+        ]);
+
+        if($request->hasFile('logo')) {
+            $formFields['logo'] = $request->file('logo')->store('logos', 'public');
+        }
+
+        $id = auth()->id();
+
+        $formFields['user_id'] = $id;
+
+        Job::create($formFields);
+
+        return redirect('/')->with('message', 'Job created successfully!');
+    }
 }

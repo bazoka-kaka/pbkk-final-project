@@ -9,6 +9,16 @@ class Job extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'user_id',
+        'title',
+        'duration',
+        'email',
+        'tags',
+        'logo',
+        'description',
+    ];
+
     public function scopeFilter($query, array $filters) {
         if($filters['tag'] ?? false) {
             $query->where('tags', 'like', '%' . request('tag') . '%');
