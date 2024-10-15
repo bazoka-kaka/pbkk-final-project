@@ -25,7 +25,7 @@
         </tr>
         <tr>
             <td>Samuel Berkat Hulu</td>
-            <td>5025201086</td>
+            <td>5025201055</td>
         </tr>
     </tbody>
 </table>
