@@ -1,7 +1,8 @@
 <?php
 
+use App\Http\Controllers\JobController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// All Listings
+Route::get('/', [JobController::class, 'index']);
