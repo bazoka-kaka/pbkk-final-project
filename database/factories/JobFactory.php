@@ -19,6 +19,8 @@ class JobFactory extends Factory
         return [
             'title' => $this->faker->sentence(),
             'tags' => 'laravel, api, backend',
+            'duration' => $this->faker->numberBetween(1, 6),
+            'email' => $this->faker->email(),
             'description' => $this->faker->paragraph(5),
         ];
     }
