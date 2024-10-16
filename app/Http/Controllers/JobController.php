@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Job;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Validation\Rule;
 
 class JobController extends Controller
@@ -89,17 +90,17 @@ class JobController extends Controller
         return view('jobs.manage', ['jobs' => auth()->user()->jobs()->get()]);
     }
 
-    // // Delete Job
-    // public function destroy(Job $job) {
-    //     // Make sure logged in user is owner
-    //     if($job->user_id != auth()->id()) {
-    //         abort(403, 'Unauthorized Action');
-    //     }
+    // Delete Job
+    public function destroy(Job $job) {
+        // Make sure logged in user is owner
+        if($job->user_id != auth()->id()) {
+            abort(403, 'Unauthorized Action');
+        }
         
-    //     if($job->logo && Storage::disk('public')->exists($job->logo)) {
-    //         Storage::disk('public')->delete($job->logo);
-    //     }
-    //     $job->delete();
-    //     return redirect('/')->with('message', 'Job deleted successfully');
-    // }
+        if($job->logo && Storage::disk('public')->exists($job->logo)) {
+            Storage::disk('public')->delete($job->logo);
+        }
+        $job->delete();
+        return redirect('/')->with('message', 'Job deleted successfully');
+    }
 }
