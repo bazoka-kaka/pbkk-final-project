@@ -69,9 +69,7 @@ class JobController extends Controller
         
         $formFields = $request->validate([
             'title' => 'required',
-            'company' => ['required'],
-            'location' => 'required',
-            'website' => 'required',
+            'duration' => 'required',
             'email' => ['required', 'email'],
             'tags' => 'required',
             'description' => 'required'

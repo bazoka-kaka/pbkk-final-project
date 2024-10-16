@@ -37,11 +37,11 @@ Route::get('/jobs/manage', [JobController::class, 'manage'])->middleware('auth')
 // Single Job
 Route::get('/jobs/{job}', [JobController::class, 'show']);
 
-// // Show Edit Form
-// Route::get('/jobs/{job}/edit', [JobController::class, 'edit'])->middleware('auth');
+// Show Edit Form
+Route::get('/jobs/{job}/edit', [JobController::class, 'edit'])->middleware('auth');
 
-// // Update Job
-// Route::put('/jobs/{job}', [JobController::class, 'update'])->middleware('auth');
+// Update Job
+Route::put('/jobs/{job}', [JobController::class, 'update'])->middleware('auth');
 
 // // Delete Job
 // Route::delete('/jobs/{job}', [JobController::class, 'destroy'])->middleware('auth');
