@@ -15,6 +15,11 @@ class JobController extends Controller
         ]);
     }
 
+    // Show about page
+    public function about() {
+        return view('jobs.about');
+    }
+
     //Show single job
     public function show(Job $job) {
         return view('jobs.show', [
@@ -49,4 +54,54 @@ class JobController extends Controller
 
         return redirect('/')->with('message', 'Job created successfully!');
     }
+
+    // Show Edit Form
+    public function edit(Job $job) {
+        return view('jobs.edit', ['job' => $job]);
+    }
+
+    // Update Job Data
+    public function update(Request $request, Job $job) {
+        // Make sure logged in user is owner
+        if($job->user_id != auth()->id()) {
+            abort(403, 'Unauthorized Action');
+        }
+        
+        $formFields = $request->validate([
+            'title' => 'required',
+            'company' => ['required'],
+            'location' => 'required',
+            'website' => 'required',
+            'email' => ['required', 'email'],
+            'tags' => 'required',
+            'description' => 'required'
+        ]);
+
+        if($request->hasFile('logo')) {
+            $formFields['logo'] = $request->file('logo')->store('logos', 'public');
+        }
+
+        $job->update($formFields);
+
+        return back()->with('message', 'Job updated successfully!');
+    }
+
+    // // Delete Job
+    // public function destroy(Job $job) {
+    //     // Make sure logged in user is owner
+    //     if($job->user_id != auth()->id()) {
+    //         abort(403, 'Unauthorized Action');
+    //     }
+        
+    //     if($job->logo && Storage::disk('public')->exists($job->logo)) {
+    //         Storage::disk('public')->delete($job->logo);
+    //     }
+    //     $job->delete();
+    //     return redirect('/')->with('message', 'Job deleted successfully');
+    // }
+
+    // // Manage Jobs
+    // public function manage() {
+    //     return view('jobs.manage', ['jobs' => auth()->user()->jobs()->get()]);
+    // }
 }
