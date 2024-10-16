@@ -86,6 +86,11 @@ class JobController extends Controller
         return back()->with('message', 'Job updated successfully!');
     }
 
+    // Manage Jobs
+    public function manage() {
+        return view('jobs.manage', ['jobs' => auth()->user()->jobs()->get()]);
+    }
+
     // // Delete Job
     // public function destroy(Job $job) {
     //     // Make sure logged in user is owner
@@ -98,10 +103,5 @@ class JobController extends Controller
     //     }
     //     $job->delete();
     //     return redirect('/')->with('message', 'Job deleted successfully');
-    // }
-
-    // // Manage Jobs
-    // public function manage() {
-    //     return view('jobs.manage', ['jobs' => auth()->user()->jobs()->get()]);
     // }
 }

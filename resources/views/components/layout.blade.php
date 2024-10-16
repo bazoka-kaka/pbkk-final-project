@@ -11,17 +11,6 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   <script src="//unpkg.com/alpinejs" defer></script>
   <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              laravel: '#ef3b2d',
-            },
-          },
-        },
-      }
-  </script>
   <title>DPTSI Jobs</title>
 </head>
 
@@ -41,12 +30,12 @@
       <p> | </p>
       @auth
       <li>
-        <span class="font-bold uppercase">
-          Welcome {{auth()->user()->name}}
+        <span class="font-semibold uppercase">
+          Welcome, {{auth()->user()->name}}
         </span>
       </li>
       <li>
-        <a href="/jobs/manage" class="hover:text-laravel"><i class="fa-solid fa-gear"></i> Manage Jobs</a>
+        <a href="/jobs/manage" class="hover:text-blue-600"><i class="fa-solid fa-gear"></i> Manage Jobs</a>
       </li>
       <li>
         <form class="inline" method="POST" action="/logout">
