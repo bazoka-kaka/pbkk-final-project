@@ -16,8 +16,8 @@
 
 <body>
   <nav class="flex justify-between items-center mb-4 fixed w-full bg-white z-50 border-b-[1px] border-b-gray-50">
-    <a href="/" class="flex items-center font-bold text-3xl"><img class="w-24" src="{{asset('images/dptsi.jpg')}}" alt="" class="logo" /> IT Jobs</a>
-    <ul class="flex space-x-8 mr-6 text-lg">
+    <a href="/" class="flex items-center text-3xl font-bold"><img class="w-24" src="{{asset('images/dptsi.jpg')}}" alt="" class="logo" /> IT Jobs</a>
+    <ul class="flex mr-6 space-x-8 text-lg">
       <li>
         <a href="/" class="hover:text-blue-600">Home</a>
       </li>
@@ -58,10 +58,10 @@
   </main>
 
 
-<footer class="bg-white rounded-lg dark:bg-gray-900 m-4">
-  <div class="w-full max-w-screen-xl mx-auto p-4 md:py-8">
+<footer class="m-4 bg-white rounded-lg">
+  <div class="w-full max-w-screen-xl p-4 mx-auto md:py-8">
       <div class="sm:flex sm:items-center sm:justify-between">
-          <a href="https://flowbite.com/" class="flex items-center mb-4 sm:mb-0 space-x-1 rtl:space-x-reverse">
+          <a href="https://flowbite.com/" class="flex items-center mb-4 space-x-1 sm:mb-0 rtl:space-x-reverse">
               <img src="{{ url('images/dptsi.jpg') }}" class="h-12" alt="Flowbite Logo" />
               <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">IT Jobs</span>
           </a>
@@ -87,10 +87,10 @@
 
 
   {{-- <footer
-    class="bottom-0 left-0 w-full flex items-center justify-start font-bold bg-blue-600 text-white h-24 mt-24 opacity-90 md:justify-center relative">
+    class="relative bottom-0 left-0 flex items-center justify-start w-full h-24 mt-24 font-bold text-white bg-blue-600 opacity-90 md:justify-center">
     <p class="ml-2">Copyright &copy; 2024, Yehezkiel & Samuel</p>
 
-    <a href="/jobs/create" class="absolute top-1/3 right-10 bg-white text-black py-2 px-5 rounded-lg hover:bg-gray-100 transition duration-200">Post Job</a>
+    <a href="/jobs/create" class="absolute px-5 py-2 text-black transition duration-200 bg-white rounded-lg top-1/3 right-10 hover:bg-gray-100">Post Job</a>
   </footer> --}}
 
   <x-flash-message />

@@ -3,11 +3,16 @@
 <p align="center"><img width="200" src="https://pbs.twimg.com/profile_images/1270957944423641089/zmYeKWnK_400x400.jpg" /></p>
 <p align="center"><strong>IT Jobs</strong></p>
 
+## Link Video Youtube
+
+-   [Link YT Penjelasan interface](https://youtu.be/M85Iv1OuHqQ)
+-   [Link YT Penjelasan kode](https://drive.google.com/file/d/1pPPFqOQWgLq6G4ZiOZhVFfOrcYR1TyY5/view?usp=sharing)
+
 ## Tabel Konten
 
-- [Anggota Kelompok](#anggota-kelompok)
-- [Tentang Project](#tentang-project)
-- [Desain Database](#desain-database)
+-   [Anggota Kelompok](#anggota-kelompok)
+-   [Tentang Project](#tentang-project)
+-   [Desain Database](#desain-database)
 
 ## Anggota Kelompok
 
@@ -44,8 +49,8 @@ Terdapat 2 tabel dalam database, yakni admin dan jobs (pekerjaan) yang terelasi 
 
 **Tabel Database**
 
-- Database admin
-- Database jobs
+-   Database admin
+-   Database jobs
 
 **Desain diagram database**
 
